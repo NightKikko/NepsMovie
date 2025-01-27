@@ -29,6 +29,6 @@
     ```
 4. Lancez le.
 
-[!WARNING]
+> [!IMPORTANT]
 > Merci de me créditer si vous reprennez le code ça serait sympa
 > Vous pouvez capitaliser dessus menfou mais créditez moi

@@ -80,9 +80,9 @@ def download_by_title(film):
     <title>{selected_movie['title']} - Lecteur</title>
     <style>
         body {{
-            background: #f4f4f9;
-            color: #333;
-            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -91,28 +91,71 @@ def download_by_title(film):
             justify-content: center;
             height: 100vh;
         }}
-        header {{
-            width: 100%;
-            background: linear-gradient(90deg, #4cc9f0, #4361ee); 
-            color: white;
-            padding: 15px 0;
+    header {{
+        width: 100%;
+        background: linear-gradient(90deg, #6a11cb, #2575fc);
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        margin-bottom: 20px;
+        border-radius: 0 0 15px 15px;
+    }}
+        .container {{
+            background: rgba(30, 30, 30, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
             text-align: center;
-            font-size: 2rem;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            border-bottom: 3px solid #4361ee;
+        }}
+        h1 {{
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ff6f61;
+        }}
+        p {{
+            font-size: 1.1rem;
+            margin: 10px 0;
+            color: #b3b3b3;
         }}
         iframe {{
             width: 100%;
-            height: 400px;
+            height: 450px;
             border: none;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+            margin-top: 20px;
+        }}
+        .copy-btn {{
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }}
+        .copy-btn:hover {{
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }}
+        .copy-btn svg {{
+            margin-right: 8px;
+        }}
+        footer {{
+            margin-top: 25px;
+            font-size: 1rem;
+            color: #b3b3b3;
         }}
     </style>
 </head>
@@ -120,8 +163,25 @@ def download_by_title(film):
     <header>NepsMovie</header>
     <div class="container">
         <h1>{selected_movie['title']}</h1>
-        <iframe src="{link}" allowfullscreen></iframe>
+        <p class="info">Sortie : <span>{selected_movie['release_date'][:4]}</span></p>
+        <p class="info">Note : <span>{selected_movie['vote_average']}/10</span></p>
+        <iframe id="player" src="{link}" allowfullscreen></iframe>
+        <button class="copy-btn" onclick="copyToClipboard()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 7.5v9m0 0v.01M7.5 7.5v-.01M16.5 7.5v9m0 0v.01M16.5 7.5v-.01M3 12h18m-9-9v18" />
+            </svg>
+            Copier le lecteur
+        </button>
+        <footer>Lecteur intégré - {selected_movie['title']}</footer>
     </div>
+    <script>
+        function copyToClipboard() {{
+            const playerIframe = document.getElementById('player').outerHTML;
+            navigator.clipboard.writeText(playerIframe)
+                .then(() => alert('Le lien du lecteur a été copié dans le presse-papiers.'))
+                .catch(err => alert('Une erreur est survenue lors de la copie.'));
+        }}
+    </script>
 </body>
 </html>
                         """

@@ -2,7 +2,7 @@ import requests, json, os
 from pystyle import Colors, Colorate, Center
 from utils.funictions import *
 
-version = 1 # NE PAS MODIFIER
+version = 1.1 # NE PAS MODIFIER
 text = """
                         ▄▄    ▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄ ▄▄▄▄▄▄▄ 
                         █  █  █ █       █       █       █  █▄█  █       █  █ █  █   █       █

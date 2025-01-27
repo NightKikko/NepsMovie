@@ -1,8 +1,10 @@
-import requests, json, os
+import requests
+import json
+import os
 from pystyle import Colors, Colorate, Center
 from utils.funictions import *
 
-version = 1.1 # NE PAS MODIFIER
+version = 1.1  # NE PAS MODIFIER
 text = """
                         ▄▄    ▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄ ▄▄▄▄▄▄▄ 
                         █  █  █ █       █       █       █  █▄█  █       █  █ █  █   █       █
@@ -11,12 +13,14 @@ text = """
                         █  ▄    █    ▄▄▄█    ▄▄▄█▄▄▄▄▄  █       █  █▄█  █       █   █    ▄▄▄█
                         █ █ █   █   █▄▄▄█   █    ▄▄▄▄▄█ █ ██▄██ █       ██     ██   █   █▄▄▄ 
                         █▄█  █▄▄█▄▄▄▄▄▄▄█▄▄▄█   █▄▄▄▄▄▄▄█▄█   █▄█▄▄▄▄▄▄▄█ █▄▄▄█ █▄▄▄█▄▄▄▄▄▄▄█
-
 """
 
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 status = check_code_version(version)
-if status == True:
-    os.system("cls")
+if status:
+    clear_screen()
     print("\n")
     print(Colorate.Vertical(Colors.blue_to_white, text, 1))
     print(Center.XCenter("Pour le moment, cet outil ne supporte que les films."))

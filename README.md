@@ -28,3 +28,7 @@
     pip install pystyle requests fake_useragent
     ```
 4. Lancez le.
+
+[!WARNING]
+> Merci de me créditer si vous reprennez le code ça serait sympa
+> Vous pouvez capitaliser dessus menfou mais créditez moi

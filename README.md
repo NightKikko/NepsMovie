@@ -1,3 +1,4 @@
+![Screenshot](https://github.com/NightKikko/NepsMovie/blob/main/preview.png?raw=true)
 # 📺 NepsMovie - Le cinéma devrait être accessible, pas un luxe.
 > [!CAUTION]
 > Ce script utilise des API pour accéder à des films. Je n'ai pas la main sur le contenu des films proposés. Il est important de noter que je ne suis en aucun cas responsable des films que vous trouvez via ce script. Ne m'envoyez pas de DMCA ! Si vous rencontrez des problèmes liés à des droits d'auteur, vous devez résoudre cela par vous-même.
